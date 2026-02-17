@@ -1,0 +1,248 @@
+:root {
+    --primary: #ff98b1;
+    --bg-dark: #0a0a0c;
+    --bg-card: #121215;
+    --text: #ffffff;
+    --border: rgba(255, 152, 177, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    background: rgba(10, 10, 12, 0.9);
+    border-bottom: 1px solid var(--border);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+}
+
+.logo span { color: var(--primary); }
+
+.menu a {
+    color: var(--text);
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-left: 20px;
+}
+
+.btn-contato {
+    border: 1px solid var(--primary);
+    padding: 8px 20px;
+    transition: 0.3s;
+}
+
+.btn-contato:hover {
+    background: var(--primary);
+    color: var(--bg-dark);
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    background: linear-gradient(to right, var(--bg-dark) 40%, transparent 100%), 
+                url('./gato.png') no-repeat center right;
+    background-size: cover;
+    background-color: var(--bg-dark); 
+}
+
+.data-box {
+    margin-bottom: 30px;
+    border-left: 3px solid var(--primary);
+    padding-left: 20px;
+}
+
+.data-box p {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.tagline {
+    color: var(--primary);
+    font-size: 0.7rem;
+    font-weight: 800;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.hero-content h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(3rem, 8vw, 5rem);
+    line-height: 0.95;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.vazado {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--primary);
+}
+
+.detalhe-rosa {
+    width: 60px;
+    height: 5px;
+    background: var(--primary);
+    margin-top: 25px;
+}
+
+.projects {
+    padding: 100px 8%;
+}
+
+.section-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    border-left: 5px solid var(--primary);
+    padding-left: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: 0.3s;
+    position: relative;
+}
+
+.card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+.card-img {
+    height: 220px;
+    width: 100%;
+    position: relative;
+    background: #1a1a1e;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.4s ease;
+}
+
+.img-active {
+    opacity: 0;
+    z-index: 1;
+}
+
+.img-static {
+    opacity: 1;
+    z-index: 2;
+}
+
+.card:hover .img-static {
+    opacity: 0;
+}
+
+.card:hover .img-active {
+    opacity: 1;
+}
+
+.card-info {
+    padding: 20px;
+}
+
+.card-info span {
+    color: var(--primary);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.card-info h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.5rem;
+    margin-top: 5px;
+}
+
+.footer {
+    padding: 60px 8% 30px;
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    background: rgba(5, 5, 5, 0.5);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left p {
+    font-weight: 800;
+    font-size: 0.9rem;
+}
+
+.footer-left span {
+    color: var(--primary);
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+}
+
+.footer-right a {
+    color: var(--text);
+    margin-left: 20px;
+    font-size: 0.8rem;
+    opacity: 0.6;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.footer-right a:hover {
+    color: var(--primary);
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
